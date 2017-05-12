@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com</groupId>
 	<artifactId>web</artifactId>
-	<name>hospital</name>
+	<name>hanbit</name>
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
 	<properties>
@@ -24,6 +24,7 @@
 		<lombok-version>1.16.8</lombok-version>
 		<junit-version>4.12</junit-version>
 		<mockito-version>1.10.19</mockito-version>
+		<spring.security.version>4.0.2.RELEASE</spring.security.version>
 	</properties>
 	<dependencies>
 		<!-- Spring -->
@@ -75,11 +76,11 @@
 			<version>${spring-version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-jdbc</artifactId>
-			<version>${spring-version}</version>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-jdbc</artifactId>
+		<version>${spring-version}</version>
 		</dependency>
-
+		
 		<!-- Servlet -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -104,12 +105,13 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
-		<!-- AspectJ -->
+		<!-- AspectJ-->
 		<dependency>
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjrt</artifactId>
 			<version>${aspectj-version}</version>
-		</dependency>
+		</dependency> 
+		
 		<!-- Logging -->
 		<dependency>
 			<groupId>org.lazyluke</groupId>
@@ -176,14 +178,14 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.mockito</groupId>
-			<artifactId>mockito-all</artifactId>
-			<version>${mockito-version}</version>
+   			<groupId>org.mockito</groupId>
+    		<artifactId>mockito-all</artifactId>
+   			<version>${mockito-version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-test</artifactId>
-			<version>${spring-version}</version>
+	    	<groupId>org.springframework</groupId>
+	   	 	<artifactId>spring-test</artifactId>
+	   		<version>${spring-version}</version>
 		</dependency>
 		<!-- jackson -->
 		<dependency>
@@ -221,19 +223,28 @@
 			<artifactId>jackson-mapper-asl</artifactId>
 			<version>1.9.2</version>
 		</dependency>
-		<!-- Json -->
-		<dependency>
-			<groupId>net.sf.json-lib</groupId>
-			<artifactId>json-lib</artifactId>
-			<version>2.4</version>
-			<classifier>jdk15</classifier>
-		</dependency>
+		<!-- Json -->           
+	<dependency>
+	<groupId>net.sf.json-lib</groupId>       
+	    <artifactId>json-lib</artifactId>       
+	    <version>2.4</version>       
+	    <classifier>jdk15</classifier>   
+	</dependency>
+       
+
+   
+
 		<!-- oracle -->
 		<dependency>
 			<groupId>commons-dbcp</groupId>
 			<artifactId>commons-dbcp</artifactId>
 			<version>1.4</version>
 		</dependency>
+	 	<!--  <dependency>
+    <groupId>com.oracle</groupId>
+    <artifactId>ojdbc6</artifactId>
+    <version>11.1.0.7.0</version>
+</dependency>   -->
 		<!-- mysql -->
 		<dependency>
 			<groupId>mysql</groupId>
@@ -269,11 +280,11 @@
 			<version>2.4</version>
 		</dependency>
 		<!-- tiles -->
-		<dependency>
+		 <dependency>
 			<groupId>org.apache.tiles</groupId>
 			<artifactId>tiles-extras</artifactId>
 			<version>${tiles-version}</version>
-		</dependency>
+		</dependency> 
 		<dependency>
 			<groupId>org.apache.tiles</groupId>
 			<artifactId>tiles-servlet</artifactId>
@@ -297,7 +308,17 @@
 			<version>${lombok-version}</version>
 			<scope>provided</scope>
 		</dependency>
-
+		<!-- security -->
+		<dependency>
+		<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>${spring.security.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>${spring.security.version}</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
@@ -343,17 +364,24 @@
 					<failOnMissingWebXml>false</failOnMissingWebXml>
 				</configuration>
 			</plugin>
+			<plugin>
+	           <groupId>org.apache.maven.plugins</groupId>
+	           <artifactId>maven-war-plugin</artifactId>
+	           <configuration>
+	              <failOnMissingWebXml>false</failOnMissingWebXml>
+	           </configuration>           
+        	</plugin>
 		</plugins>
 	</build>
 	<repositories>
 		<repository>
 			<id>jdbc</id>
 			<url>http://mesir.googlecode.com/svn/trunk/mavenrepo</url>
-		</repository>
+		</repository> 
 		<repository>
-			<id>oracle</id>
-			<name>ORACLE JDBC Repository</name>
-			<url>http://maven.jahia.org/maven2</url>
-		</repository>
+        <id>oracle</id>
+        <name>ORACLE JDBC Repository</name>
+        <url>http://maven.jahia.org/maven2</url>
+    </repository>
 	</repositories>
 </project>
