@@ -8,9 +8,9 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import com.kal.web.domain.Seat;
 
-
+@Component
 public interface SeatService {
-	public int findNumberOfSeats(Seat seat) throws Exception;
-	public Seat findSeat(Map<String, Seat> map) throws Exception;
-	public List<Seat> findSeats(Map<String, Seat> map) throws Exception;
+	public int findNumberOfSeats() throws Exception;
+	public Seat findSeat(Map<String,Object> paramMap) throws Exception;
+	public List<Seat> findSeats(Map<String,Object> paramMap) throws Exception;
 }

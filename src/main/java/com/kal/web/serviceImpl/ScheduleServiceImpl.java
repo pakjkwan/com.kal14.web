@@ -14,43 +14,37 @@ import com.kal.web.service.ScheduleService;
 @Service
 public class ScheduleServiceImpl implements ScheduleService{
 	@Autowired ScheduleMapper mapper;
-
 	@Override
 	public void addSchedule(Flight flight) {
 		mapper.addSchedule(flight);
-	}
-
-	@Override
-	public int findNumberOfSchedules(Flight flight) {
-		int count;
-		count=mapper.findNumberOfSchedules(flight);
-		return count;
-	}
-
-	@Override
-	public Schedule findSchedule(Schedule schedule) {
-		Schedule findOne=new Schedule();
-		findOne=mapper.findSchedule(schedule);
-		return findOne;
-	}
-
-	@Override
-	public List<ScheduleMapper> findSchedules(Map<String, Schedule> paramMap) {
-		List<ScheduleMapper> list=new ArrayList<>();
-		list=mapper.findSchedules(paramMap);
-		return list;
-	}
-
-	@Override
-	public int updateSchedule(Flight flight) {
-		mapper.updateSchedule(flight);
-		return 0;
-	}
-
-	@Override
-	public void deleteSchedule(Flight flight) {
-		mapper.deleteSchedule(flight);
 		
 	}
+
+	@Override
+	public int findNumberOfSchedules() {
+		return mapper.findNumberOfSchedules();
+	}
+
+	@Override
+	public Schedule findSchedule(Map<String, Object> paramMap) {
+		return mapper.findSchedule(paramMap);
+	}
+
+	@Override
+	public List<ScheduleMapper> findSchedules(Map<String, Object> paramMap) {
+		return mapper.findSchedules(paramMap);
+	}
+
+	@Override
+	public void updateSchedule(Flight flight) {
+		mapper.updateSchedule(flight);
+	}
+
+	@Override
+	public void deleteSchedule(Map<String, Object> paramMap) {
+		mapper.deleteSchedule(paramMap);
+		
+	}
+	
 	
 }

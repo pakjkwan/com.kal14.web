@@ -14,43 +14,39 @@ import com.kal.web.service.RouteService;
 @Service
 public class RouteServiceImpl implements RouteService{
 	@Autowired RouteMapper mapper;
-
 	@Override
 	public void addRoute(Flight flight) {
 		mapper.addRoute(flight);
+		
 	}
 
 	@Override
-	public int findNumberOfRoutes(Flight flight) {
-		int count;
-		count=mapper.findNumberOfRoutes(flight);
-		return count;
+	public int findNumberOfRoutes() {
+		return mapper.findNumberOfRoutes();
 	}
 
 	@Override
-	public Route findRoute(Route route) {
-		Route findOne=new Route();
-		findOne=mapper.findRoute(route);
-		return findOne;
+	public Route findRoute(Map<String, Object> paramMap) {
+		return mapper.findRoute(paramMap);
 	}
 
 	@Override
-	public List<Route> findRoutes(Map<String, Route> paramMap) {
-		List<Route> list=new ArrayList<>();
-		list=mapper.findRoutes(paramMap);
-		return list;
+	public List<Route> findRoutes(Map<String, Object> paramMap) {
+		return mapper.findRoutes(paramMap);
 	}
 
 	@Override
 	public void updateRoute(Flight flight) {
 		mapper.updateRoute(flight);
+		
 	}
 
 	@Override
-	public void deleteRoute(Flight flight) {
-		mapper.deleteRoute(flight);
+	public void deleteRoute(Map<String, Object> paramMap) {
+		mapper.deleteRoute(paramMap);
+		
 	}
-
+	
 
 
 }

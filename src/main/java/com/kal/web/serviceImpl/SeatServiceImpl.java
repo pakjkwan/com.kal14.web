@@ -13,25 +13,20 @@ import com.kal.web.service.SeatService;
 
 @Service
 public class SeatServiceImpl implements SeatService{
-@Autowired SeatMapper mapper;
-
-	@Override 
-	public int findNumberOfSeats(Seat seat) throws Exception {
-		int temp = 0;
-		temp=mapper.findNumberOfSeats(seat);
-		return temp;
+	@Autowired SeatMapper mapper;
+	@Override
+	public int findNumberOfSeats() throws Exception {
+		return mapper.findNumberOfSeats();
 	}
 
 	@Override
-	public Seat findSeat(Map<String, Seat> map) throws Exception {
-		Seat seat = new Seat();
-		seat=mapper.findSeat(map);
-		return seat;
+	public Seat findSeat(Map<String, Object> paramMap) throws Exception {
+		return mapper.findSeat(paramMap);
 	}
 
 	@Override
-	public List<Seat> findSeats(Map<String, Seat> map) throws Exception {
-		List<Seat> seat = new ArrayList<Seat>();
-		return seat;
+	public List<Seat> findSeats(Map<String, Object> paramMap) throws Exception {
+		return mapper.findSeats(paramMap);
 	}
+
 }
