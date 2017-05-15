@@ -2,10 +2,9 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.kal.web.mapper.BoardFaqMapper" >
+<mapper namespace="com.kal.web.mapper.BoardFAQMapper" >
      <resultMap id="BoardFAQ" type="com.kal.web.domain.BoardFAQ">
        <id property="id" column="faq_seq"/>
-       <result property="nurID" column="faq_req"/>
      </resultMap>
       <insert id="addBoardFAQ"></insert>
       <select id="findBoardFAQ" resultMap="BoardFAQ" parameterType="hashMap"></select>

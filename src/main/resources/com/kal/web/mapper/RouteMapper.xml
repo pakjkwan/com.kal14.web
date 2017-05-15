@@ -2,10 +2,10 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.kal.web.mapper">
+<mapper namespace="com.kal.web.mapper.RouteMapper">
 	<resultMap id="Route" type="com.kal.web.domain.Route">
-		<id property="route_seq" column="route_seq" />
-		<result property="flight_seq" column="flight_seq" />
+		<id property="routeSeq" column="route_seq" />
+		<result property="flightSeq" column="flight_seq" />
 		
 	</resultMap>
 
@@ -19,9 +19,9 @@
 	</select>
 
 	<!--R -->
-	<select id="findRoute" resultMap="Route" parameterType="Route">
+	<select id="findRoute" resultMap="Route" parameterType="hashMap">
 	</select>
-	<select id="findRouteS" resultMap="List" parameterType="Map">
+	<select id="findRouteS" resultMap="Route" parameterType="hashMap">
 	</select>
 
 	<!--U -->
@@ -29,7 +29,7 @@
 	</update>
 	
 	<!--D-->
-	<select id="deleteRoute" resultType="">
+	<select id="deleteRoute" >
 	</select>
 
 </mapper>

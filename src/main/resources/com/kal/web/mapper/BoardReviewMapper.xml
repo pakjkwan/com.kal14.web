@@ -5,7 +5,7 @@
 <mapper namespace="com.kal.web.mapper.BoardReviewMapper" >
 	<resultMap id="BoardReview" type="com.kal.web.domain.BoardReview">
        <id property="id" column="rev_seq"/>
-       <result property="rev_reg_date" column="rev_reg_date"/>
+       <result property="revRegDate" column="rev_reg_date"/>
 	</resultMap>
 	 <select id="findBoardReview" resultMap="BoardReview" parameterType="hashMap"></select>
 	 <insert id="addBoardReview"></insert>

@@ -2,10 +2,10 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.kal.web.mapper">
+<mapper namespace="com.kal.web.mapper.FlightMapper">
 	<resultMap id="Flight" type="com.kal.web.domain.Flight">
-		<id property="flights_seq" column="flights_seq" />
-		<result property="flight_name" column="flight_name" />
+		<id property="flightsSeq" column="flights_seq" />
+		<result property="flightName" column="flight_name" />
 	</resultMap>
 
 	<!--C -->
@@ -18,10 +18,10 @@
 	
 
 	<!--R -->
-	<select id="findFlight" resultMap="Flight" parameterType="Flight">
+	<select id="findFlight" resultMap="Flight" parameterType="hashMap">
 	</select>
 	
-	<select id="findFlights" resultMap="List" parameterType="Map">
+	<select id="findFlights" resultMap="List" parameterType="hashMap">
 	</select>
 
 

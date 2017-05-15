@@ -2,10 +2,10 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.kal.web.mapper">
+<mapper namespace="com.kal.web.mapper.ScheduleMapper">
 	<resultMap id="Schedule" type="com.kal.web.domain.Schedule">
-		<id property="sche_seq" column="sche_seq" />
-		<result property="route_seq" column="route_seq" />
+		<id property="scheSeq" column="sche_seq" />
+		<result property="routeSeq" column="route_seq" />
 		
 	</resultMap>
 
@@ -19,9 +19,9 @@
 	</select>
 
 	<!--R -->
-	<select id="findSchedule" resultMap="Schedule" parameterType="Schedule">
+	<select id="findSchedule"  parameterType="hashMap">
 	</select>
-	<select id="findSchedules" resultMap="List" parameterType="Map">
+	<select id="findSchedules"  parameterType="hashMap">
 	</select>
 
 	<!--U -->
