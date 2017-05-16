@@ -1674,12 +1674,12 @@
    .kal-before-login-sub-right-menu-search{
       font-size:12px;
       color:gray;
-      width:80px;
+      width:90px;
    }
    .kal-before-login-sub-right-menu-search-icon>img{
       position:absolute;
       top:14px;
-      right:25px;
+      right:38px;
    }
    /* after-login */
    .kal-after-login-sub-gnb{

@@ -20,7 +20,7 @@
          <div class="kal-before-login-sub-right-menu">
             <a class="kal-before-login-sub-right-menu-login" href="#">로그인   ｜</a>
             <a class="kal-before-login-sub-right-menu-regist" href="">회원가입    ｜</a>
-            <a class="kal-before-login-sub-right-menu-myregist" href="">나의 예약    ｜</a>
+            <a id="administrator-access" href="#administrator-access-form" class="popup-open kal-before-login-sub-right-menu-regist">관리자    ｜      </a>
             <input class="kal-before-login-sub-right-menu-search" type="text" placeholder="검색"/>
             <a class="kal-before-login-sub-right-menu-search-icon" href="#"><img src="${context}/resources/img/main/icon-search.png"/></a>
          </div>
@@ -31,6 +31,10 @@
 	$(".kal-before-login-sub-right-menu-search-icon").on('click',function(){
 		alert('검색 결과');	
 		location.href="${context}/search";
+	});
+	$('.kal-admin-test').on('click',function(){
+		alert('관리자 임시 페이지 버튼 클릭');
+		location.href = "${context}/goAdmin";
 	});
 </script>
 </html>
